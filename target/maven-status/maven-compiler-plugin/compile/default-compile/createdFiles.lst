@@ -1,0 +1,7 @@
+com\gpstracker\command\GPSCommand.class
+com\gpstracker\util\MessageUtils.class
+com\gpstracker\manager\GPSManager.class
+com\gpstracker\listener\PlayerListener.class
+com\gpstracker\GPSPlugin.class
+com\gpstracker\task\NavigationTask.class
+com\gpstracker\manager\DataManager.class

@@ -1,0 +1,25 @@
+name: GPSTracker
+version: 1.0.0
+main: com.gpstracker.GPSPlugin
+api-version: '1.20'
+description: GPS navigation system for tracking friends on RP servers
+author: SeniorDev
+website: ''
+
+# Никаких depend / softdepend — плагин полностью автономен
+# и не конфликтует с PlaceholderAPI, ViaVersion, Spark,
+# Sonar, ThemisAC, Vault, Chunky и любыми другими плагинами.
+
+commands:
+  gps:
+    description: GPS navigation commands
+    usage: /gps <subcommand> [args]
+    aliases: [gpstracker, навигатор]
+
+permissions:
+  gps.use:
+    description: Allows basic GPS commands
+    default: true
+  gps.admin:
+    description: Allows GPS admin commands (reload)
+    default: op

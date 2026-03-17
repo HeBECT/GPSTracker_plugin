@@ -1,0 +1,99 @@
+# ============================================================
+#                  GPSTracker v1.0.0 — Config
+# ============================================================
+# Формат сообщений: MiniMessage (поддержка gradient, hex, hover, click)
+# Документация MiniMessage: https://docs.advntr.dev/minimessage/format.html
+# ============================================================
+
+settings:
+  # Интервал обновления Action Bar навигации (в тиках, 20 тиков = 1 секунда)
+  # Рекомендуется 10-20 для плавности
+  update-interval: 10
+
+  # Максимальная дистанция отслеживания в блоках
+  # Установите -1 для безлимитной дистанции
+  max-tracking-distance: -1
+
+  # Время жизни запроса на добавление в друзья (в секундах)
+  request-expire-seconds: 60
+
+  # Интервал автосохранения данных (в секундах)
+  autosave-interval: 300000
+
+# ============================================================
+#  Сообщения (MiniMessage формат с поддержкой gradient)
+# ============================================================
+messages:
+  # Префикс плагина (добавляется перед каждым сообщением)
+  prefix: "<gradient:#00ccff:#aa88ff>GPS</gradient> <dark_gray>»</dark_gray> "
+
+  # Ошибки
+  no-permission: "<gradient:#ff4444:#cc0000>❌ У вас нет прав для использования GPS!</gradient>"
+  player-not-found: "<gradient:#ff4444:#cc0000>❌ Игрок не найден или не в сети!</gradient>"
+  player-not-online: "<gradient:#ff4444:#cc0000>❌ Игрок сейчас не в сети!</gradient>"
+  cannot-add-self: "<gradient:#ff6600:#ffcc00>⚠ Вы не можете добавить себя!</gradient>"
+  already-friends: "<gradient:#ff6600:#ffcc00>⚠ Этот игрок уже в вашем GPS списке!</gradient>"
+  not-friends: "<gradient:#ff4444:#cc0000>❌ Этот игрок не в вашем списке друзей!</gradient>"
+  different-world: "<gradient:#ff6600:#ffcc00>⚠ Игрок находится в другом мире!</gradient>"
+  too-far: "<gradient:#ff6600:#ffcc00>⚠ Игрок слишком далеко! Макс. дистанция: {max}м</gradient>"
+  already-sent-request: "<gradient:#ff6600:#ffcc00>⚠ Вы уже отправили запрос этому игроку!</gradient>"
+
+  # Запросы
+  request-sent: "<gradient:#00ff88:#00ccff>✉ Запрос на отслеживание отправлен игроку {player}!</gradient>"
+  request-received: "<gradient:#00ccff:#aa88ff>✉ Игрок {player} хочет добавить вас в свой GPS!</gradient>"
+  request-buttons: "<gradient:#00ff88:#00cc66><click:run_command:/gps accept><hover:show_text:'Нажмите чтобы принять'>[✔ Принять]</hover></click></gradient> <gradient:#ff4444:#cc0000><click:run_command:/gps deny><hover:show_text:'Нажмите чтобы отклонить'>[✘ Отклонить]</hover></click></gradient>"
+  request-expired: "<gradient:#ff6600:#ffcc00>⏰ Запрос от {player} истёк!</gradient>"
+
+  # Принятие / Отклонение
+  no-pending-request: "<gradient:#ff6600:#ffcc00>⚠ У вас нет входящих запросов!</gradient>"
+  request-accepted: "<gradient:#00ff88:#00ccff>✅ Вы приняли запрос! Теперь вы можете отслеживать друг друга.</gradient>"
+  request-accepted-sender: "<gradient:#00ff88:#00ccff>✅ Игрок {player} принял ваш запрос!</gradient>"
+  request-denied: "<gradient:#ff4444:#cc0000>❌ Вы отклонили запрос на отслеживание.</gradient>"
+  request-denied-sender: "<gradient:#ff4444:#cc0000>❌ Игрок {player} отклонил ваш запрос.</gradient>"
+
+  # Навигация
+  tracking-started: "<gradient:#00ff88:#00ccff>🛰 Навигация к игроку {player} включена!</gradient>"
+  tracking-stopped: "<gradient:#ff6600:#ffcc00>🛰 Навигация остановлена.</gradient>"
+  navigation-enabled: "<gradient:#00ff88:#00ccff>✅ GPS навигация включена!</gradient>"
+  navigation-disabled: "<gradient:#ff6600:#ffcc00>❌ GPS навигация выключена.</gradient>"
+  not-tracking-anyone: "<gradient:#ff6600:#ffcc00>⚠ Вы не отслеживаете никого! Используйте /gps track <игрок></gradient>"
+
+  # Управление друзьями
+  friend-removed: "<gradient:#ff6600:#ffcc00>✅ Игрок {player} удалён из GPS списка.</gradient>"
+  no-friends: "<gradient:#ff6600:#ffcc00>⚠ Ваш GPS список пуст. Используйте /gps add <игрок></gradient>"
+
+  # Список друзей
+  list-header: "<gradient:#00ccff:#aa88ff>══════════ 🛰 GPS Друзья ══════════</gradient>"
+  list-entry-online: "<gradient:#00ff88:#00ccff>● {player}</gradient> <gray>—</gray> <white>{distance}м</white> <dark_gray>[{x}, {y}, {z}]</dark_gray>"
+  list-entry-online-different-world: "<gradient:#ffcc00:#ff8800>● {player}</gradient> <gray>— Другой мир ({world})</gray>"
+  list-entry-offline: "<gray>○ {player} — Оффлайн</gray>"
+  list-footer: "<gradient:#00ccff:#aa88ff>═══════════════════════════════════</gradient>"
+
+  # Action Bar навигация
+  navigation-actionbar: "<gradient:#00ff88:#00ccff>{arrow} {player} • {distance}м</gradient>"
+  target-offline-actionbar: "<gradient:#ff6600:#ffcc00>⚠ {player} — не в сети</gradient>"
+  different-world-actionbar: "<gradient:#ff6600:#ffcc00>⚠ {player} — другой мир</gradient>"
+
+  # Использование команд
+  usage-add: "<gradient:#ff6600:#ffcc00>Использование: /gps add <игрок></gradient>"
+  usage-track: "<gradient:#ff6600:#ffcc00>Использование: /gps track <игрок></gradient>"
+  usage-remove: "<gradient:#ff6600:#ffcc00>Использование: /gps remove <игрок></gradient>"
+
+  # Админ
+  config-reloaded: "<gradient:#00ff88:#00ccff>✅ Конфигурация GPS перезагружена!</gradient>"
+
+  # Помощь
+  help:
+    - ""
+    - "<gradient:#00ccff:#aa88ff>══════════ 🛰 GPS Навигация ══════════</gradient>"
+    - ""
+    - " <gradient:#00ff88:#00ccff>/gps add <игрок></gradient>    <gray>— Отправить запрос дружбы</gray>"
+    - " <gradient:#00ff88:#00ccff>/gps accept</gradient>         <gray>— Принять входящий запрос</gray>"
+    - " <gradient:#00ff88:#00ccff>/gps deny</gradient>           <gray>— Отклонить входящий запрос</gray>"
+    - " <gradient:#00ff88:#00ccff>/gps list</gradient>           <gray>— Список друзей с координатами</gray>"
+    - " <gradient:#00ff88:#00ccff>/gps track <игрок></gradient>  <gray>— Начать навигацию к другу</gray>"
+    - " <gradient:#00ff88:#00ccff>/gps toggle</gradient>         <gray>— Включить/выключить навигацию</gray>"
+    - " <gradient:#00ff88:#00ccff>/gps remove <игрок></gradient> <gray>— Удалить друга из GPS</gray>"
+    - ""
+    - "<gradient:#00ccff:#aa88ff>════════════════════════════════════</gradient>"
+    - ""
